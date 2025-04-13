@@ -1,6 +1,6 @@
-// Дождёмся загрузки документа
+// Г„Г®Г¦Г¤ВёГ¬Г±Гї Г§Г ГЈГ°ГіГ§ГЄГЁ Г¤Г®ГЄГіГ¬ГҐГ­ГІГ 
 document.addEventListener('DOMContentLoaded', function() {
-    // Переменные для элементов
+    // ГЏГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ Г¤Г«Гї ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў
     const header = document.getElementById('header');
     const backToTop = document.getElementById('backToTop');
     const navToggle = document.getElementById('navToggle');
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const portfolioItems = document.querySelectorAll('.portfolio-item');
     const contactForm = document.getElementById('contactForm');
     
-    // Прилипающая шапка при скролле
+    // ГЏГ°ГЁГ«ГЁГЇГ ГѕГ№Г Гї ГёГ ГЇГЄГ  ГЇГ°ГЁ Г±ГЄГ°Г®Г«Г«ГҐ
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -20,18 +20,18 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('scrolled');
         }
         
-        // Показать/скрыть кнопку "Наверх"
+        // ГЏГ®ГЄГ Г§Г ГІГј/Г±ГЄГ°Г»ГІГј ГЄГ­Г®ГЇГЄГі "ГЌГ ГўГҐГ°Гµ"
         if (window.scrollY > 500) {
             backToTop.classList.add('active');
         } else {
             backToTop.classList.remove('active');
         }
         
-        // Анимация прогресса навыков при скролле
+        // ГЂГ­ГЁГ¬Г Г¶ГЁГї ГЇГ°Г®ГЈГ°ГҐГ±Г±Г  Г­Г ГўГ»ГЄГ®Гў ГЇГ°ГЁ Г±ГЄГ°Г®Г«Г«ГҐ
         animateSkillBars();
     });
     
-    // Функция анимации полосок навыков
+    // Г”ГіГ­ГЄГ¶ГЁГї Г Г­ГЁГ¬Г Г¶ГЁГЁ ГЇГ®Г«Г®Г±Г®ГЄ Г­Г ГўГ»ГЄГ®Гў
     function animateSkillBars() {
         const triggerBottom = window.innerHeight * 0.8;
         
@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Запускаем при загрузке страницы
+    // Г‡Г ГЇГіГ±ГЄГ ГҐГ¬ ГЇГ°ГЁ Г§Г ГЈГ°ГіГ§ГЄГҐ Г±ГІГ°Г Г­ГЁГ¶Г»
     animateSkillBars();
     
-    // Плавная прокрутка при клике на ссылки навигации
+    // ГЏГ«Г ГўГ­Г Гї ГЇГ°Г®ГЄГ°ГіГІГЄГ  ГЇГ°ГЁ ГЄГ«ГЁГЄГҐ Г­Г  Г±Г±Г»Г«ГЄГЁ Г­Г ГўГЁГЈГ Г¶ГЁГЁ
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -57,10 +57,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                // Закрываем мобильное меню
+                // Г‡Г ГЄГ°Г»ГўГ ГҐГ¬ Г¬Г®ГЎГЁГ«ГјГ­Г®ГҐ Г¬ГҐГ­Гѕ
                 nav.classList.remove('active');
                 
-                // Плавная прокрутка к секции
+                // ГЏГ«Г ГўГ­Г Гї ГЇГ°Г®ГЄГ°ГіГІГЄГ  ГЄ Г±ГҐГЄГ¶ГЁГЁ
                 window.scrollTo({
                     top: targetSection.offsetTop - 70,
                     behavior: 'smooth'
@@ -69,24 +69,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Мобильное меню - открыть
+    // ГЊГ®ГЎГЁГ«ГјГ­Г®ГҐ Г¬ГҐГ­Гѕ - Г®ГІГЄГ°Г»ГІГј
     navToggle.addEventListener('click', function() {
         nav.classList.add('active');
     });
     
-    // Мобильное меню - закрыть
+    // ГЊГ®ГЎГЁГ«ГјГ­Г®ГҐ Г¬ГҐГ­Гѕ - Г§Г ГЄГ°Г»ГІГј
     closeNav.addEventListener('click', function() {
         nav.classList.remove('active');
     });
     
-    // Клик вне меню закрывает его
+    // ГЉГ«ГЁГЄ ГўГ­ГҐ Г¬ГҐГ­Гѕ Г§Г ГЄГ°Г»ГўГ ГҐГІ ГҐГЈГ®
     document.addEventListener('click', function(e) {
         if (!nav.contains(e.target) && e.target !== navToggle) {
             nav.classList.remove('active');
         }
     });
     
-    // Кнопка "Наверх"
+    // ГЉГ­Г®ГЇГЄГ  "ГЌГ ГўГҐГ°Гµ"
     backToTop.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
@@ -94,26 +94,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Фильтрация портфолио
+    // Г”ГЁГ«ГјГІГ°Г Г¶ГЁГї ГЇГ®Г°ГІГґГ®Г«ГЁГ®
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Удаляем активный класс у всех кнопок
+            // Г“Г¤Г Г«ГїГҐГ¬ Г ГЄГІГЁГўГ­Г»Г© ГЄГ«Г Г±Г± Гі ГўГ±ГҐГµ ГЄГ­Г®ГЇГ®ГЄ
             filterBtns.forEach(btn => {
                 btn.classList.remove('active');
             });
             
-            // Добавляем активный класс текущей кнопке
+            // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г ГЄГІГЁГўГ­Г»Г© ГЄГ«Г Г±Г± ГІГҐГЄГіГ№ГҐГ© ГЄГ­Г®ГЇГЄГҐ
             this.classList.add('active');
             
-            // Получаем категорию фильтрации
+            // ГЏГ®Г«ГіГ·Г ГҐГ¬ ГЄГ ГІГҐГЈГ®Г°ГЁГѕ ГґГЁГ«ГјГІГ°Г Г¶ГЁГЁ
             const filter = this.getAttribute('data-filter');
             
-            // Фильтруем элементы портфолио
+            // Г”ГЁГ«ГјГІГ°ГіГҐГ¬ ГЅГ«ГҐГ¬ГҐГ­ГІГ» ГЇГ®Г°ГІГґГ®Г«ГЁГ®
             portfolioItems.forEach(item => {
                 if (filter === 'all' || item.getAttribute('data-category') === filter) {
                     item.style.display = 'block';
                     
-                    // Анимация появления
+                    // ГЂГ­ГЁГ¬Г Г¶ГЁГї ГЇГ®ГїГўГ«ГҐГ­ГЁГї
                     setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'scale(1)';
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     item.style.opacity = '0';
                     item.style.transform = 'scale(0.8)';
                     
-                    // Скрываем после анимации
+                    // Г‘ГЄГ°Г»ГўГ ГҐГ¬ ГЇГ®Г±Г«ГҐ Г Г­ГЁГ¬Г Г¶ГЁГЁ
                     setTimeout(() => {
                         item.style.display = 'none';
                     }, 300);
@@ -131,72 +131,72 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Обработка формы обратной связи
+    // ГЋГЎГ°Г ГЎГ®ГІГЄГ  ГґГ®Г°Г¬Г» Г®ГЎГ°Г ГІГ­Г®Г© Г±ГўГїГ§ГЁ
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Получаем значения полей
+            // ГЏГ®Г«ГіГ·Г ГҐГ¬ Г§Г­Г Г·ГҐГ­ГЁГї ГЇГ®Г«ГҐГ©
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Здесь можно добавить валидацию формы
+            // Г‡Г¤ГҐГ±Гј Г¬Г®Г¦Г­Г® Г¤Г®ГЎГ ГўГЁГІГј ГўГ Г«ГЁГ¤Г Г¶ГЁГѕ ГґГ®Г°Г¬Г»
             if (name.trim() === '' || email.trim() === '' || subject.trim() === '' || message.trim() === '') {
-                showFormMessage('Пожалуйста, заполните все поля', 'error');
+                showFormMessage('ГЏГ®Г¦Г Г«ГіГ©Г±ГІГ , Г§Г ГЇГ®Г«Г­ГЁГІГҐ ГўГ±ГҐ ГЇГ®Г«Гї', 'error');
                 return;
             }
             
-            // Проверка email
+            // ГЏГ°Г®ГўГҐГ°ГЄГ  email
             if (!isValidEmail(email)) {
-                showFormMessage('Пожалуйста, введите корректный email', 'error');
+                showFormMessage('ГЏГ®Г¦Г Г«ГіГ©Г±ГІГ , ГўГўГҐГ¤ГЁГІГҐ ГЄГ®Г°Г°ГҐГЄГІГ­Г»Г© email', 'error');
                 return;
             }
             
-            // Имитация отправки формы (в реальном проекте здесь будет AJAX запрос)
-            // Можно использовать fetch API для отправки данных на сервер
+            // Г€Г¬ГЁГІГ Г¶ГЁГї Г®ГІГЇГ°Г ГўГЄГЁ ГґГ®Г°Г¬Г» (Гў Г°ГҐГ Г«ГјГ­Г®Г¬ ГЇГ°Г®ГҐГЄГІГҐ Г§Г¤ГҐГ±Гј ГЎГіГ¤ГҐГІ AJAX Г§Г ГЇГ°Г®Г±)
+            // ГЊГ®Г¦Г­Г® ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ ГІГј fetch API Г¤Г«Гї Г®ГІГЇГ°Г ГўГЄГЁ Г¤Г Г­Г­Г»Гµ Г­Г  Г±ГҐГ°ГўГҐГ°
             
-            // Показываем сообщение об успешной отправке
-            showFormMessage('Ваше сообщение успешно отправлено!', 'success');
+            // ГЏГ®ГЄГ Г§Г»ГўГ ГҐГ¬ Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ Г®ГЎ ГіГ±ГЇГҐГёГ­Г®Г© Г®ГІГЇГ°Г ГўГЄГҐ
+            showFormMessage('Г‚Г ГёГҐ Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ ГіГ±ГЇГҐГёГ­Г® Г®ГІГЇГ°Г ГўГ«ГҐГ­Г®!', 'success');
             
-            // Очищаем форму
+            // ГЋГ·ГЁГ№Г ГҐГ¬ ГґГ®Г°Г¬Гі
             contactForm.reset();
         });
     }
     
-    // Показ сообщения формы
+    // ГЏГ®ГЄГ Г§ Г±Г®Г®ГЎГ№ГҐГ­ГЁГї ГґГ®Г°Г¬Г»
     function showFormMessage(message, type) {
-        // Проверяем, существует ли уже элемент сообщения
+        // ГЏГ°Г®ГўГҐГ°ГїГҐГ¬, Г±ГіГ№ГҐГ±ГІГўГіГҐГІ Г«ГЁ ГіГ¦ГҐ ГЅГ«ГҐГ¬ГҐГ­ГІ Г±Г®Г®ГЎГ№ГҐГ­ГЁГї
         let messageElement = document.querySelector('.form-message');
         
         if (!messageElement) {
-            // Создаем новый элемент для сообщения
+            // Г‘Г®Г§Г¤Г ГҐГ¬ Г­Г®ГўГ»Г© ГЅГ«ГҐГ¬ГҐГ­ГІ Г¤Г«Гї Г±Г®Г®ГЎГ№ГҐГ­ГЁГї
             messageElement = document.createElement('div');
             messageElement.className = 'form-message';
             contactForm.appendChild(messageElement);
         }
         
-        // Устанавливаем текст и класс в зависимости от типа сообщения
+        // Г“Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ ГІГҐГЄГ±ГІ ГЁ ГЄГ«Г Г±Г± Гў Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г®ГІ ГІГЁГЇГ  Г±Г®Г®ГЎГ№ГҐГ­ГЁГї
         messageElement.textContent = message;
         messageElement.className = `form-message ${type}`;
         
-        // Показываем сообщение
+        // ГЏГ®ГЄГ Г§Г»ГўГ ГҐГ¬ Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ
         messageElement.style.display = 'block';
         
-        // Автоматически скрываем сообщение через 4 секунды
+        // ГЂГўГІГ®Г¬Г ГІГЁГ·ГҐГ±ГЄГЁ Г±ГЄГ°Г»ГўГ ГҐГ¬ Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ Г·ГҐГ°ГҐГ§ 4 Г±ГҐГЄГіГ­Г¤Г»
         setTimeout(() => {
             messageElement.style.display = 'none';
         }, 4000);
     }
     
-    // Валидация email
+    // Г‚Г Г«ГЁГ¤Г Г¶ГЁГї email
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
     
-    // Анимация для элементов при скролле
+    // ГЂГ­ГЁГ¬Г Г¶ГЁГї Г¤Г«Гї ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў ГЇГ°ГЁ Г±ГЄГ°Г®Г«Г«ГҐ
     const animatedElements = document.querySelectorAll('.service-item, .portfolio-item, .contact-item');
     
     function checkAnimatedElements() {
@@ -212,9 +212,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     window.addEventListener('scroll', checkAnimatedElements);
-    checkAnimatedElements(); // Запуск при загрузке
+    checkAnimatedElements(); // Г‡Г ГЇГіГ±ГЄ ГЇГ°ГЁ Г§Г ГЈГ°ГіГ§ГЄГҐ
     
-    // Плавное появление секций при загрузке
+    // ГЏГ«Г ГўГ­Г®ГҐ ГЇГ®ГїГўГ«ГҐГ­ГЁГҐ Г±ГҐГЄГ¶ГЁГ© ГЇГ°ГЁ Г§Г ГЈГ°ГіГ§ГЄГҐ
     const sections = document.querySelectorAll('section');
     
     function animateSections() {
@@ -225,10 +225,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Запускаем анимацию секций после загрузки страницы
+    // Г‡Г ГЇГіГ±ГЄГ ГҐГ¬ Г Г­ГЁГ¬Г Г¶ГЁГѕ Г±ГҐГЄГ¶ГЁГ© ГЇГ®Г±Г«ГҐ Г§Г ГЈГ°ГіГ§ГЄГЁ Г±ГІГ°Г Г­ГЁГ¶Г»
     window.addEventListener('load', animateSections);
     
-    // Добавляем стили для анимаций
+    // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г±ГІГЁГ«ГЁ Г¤Г«Гї Г Г­ГЁГ¬Г Г¶ГЁГ©
     const style = document.createElement('style');
     style.textContent = `
         .service-item, .portfolio-item, .contact-item {
@@ -272,41 +272,41 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
     
-    // Аналитика просмотров портфолио (пример)
+    // ГЂГ­Г Г«ГЁГІГЁГЄГ  ГЇГ°Г®Г±Г¬Г®ГІГ°Г®Гў ГЇГ®Г°ГІГґГ®Г«ГЁГ® (ГЇГ°ГЁГ¬ГҐГ°)
     const trackPortfolioViews = () => {
         const portfolioItems = document.querySelectorAll('.portfolio-item');
         
-        // Для каждого элемента портфолио добавляем отслеживание просмотров
+        // Г„Г«Гї ГЄГ Г¦Г¤Г®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ  ГЇГ®Г°ГІГґГ®Г«ГЁГ® Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ Г®ГІГ±Г«ГҐГ¦ГЁГўГ Г­ГЁГҐ ГЇГ°Г®Г±Г¬Г®ГІГ°Г®Гў
         portfolioItems.forEach((item, index) => {
-            // Находим иконку поиска (подробный просмотр)
+            // ГЌГ ГµГ®Г¤ГЁГ¬ ГЁГЄГ®Г­ГЄГі ГЇГ®ГЁГ±ГЄГ  (ГЇГ®Г¤Г°Г®ГЎГ­Г»Г© ГЇГ°Г®Г±Г¬Г®ГІГ°)
             const viewBtn = item.querySelector('.portfolio-link:last-child');
             
             if (viewBtn) {
                 viewBtn.addEventListener('click', function(e) {
                     e.preventDefault();
                     
-                    // В реальном проекте здесь можно отправить данные на сервер
-                    console.log(`Просмотр проекта #${index + 1}`);
+                    // Г‚ Г°ГҐГ Г«ГјГ­Г®Г¬ ГЇГ°Г®ГҐГЄГІГҐ Г§Г¤ГҐГ±Гј Г¬Г®Г¦Г­Г® Г®ГІГЇГ°Г ГўГЁГІГј Г¤Г Г­Г­Г»ГҐ Г­Г  Г±ГҐГ°ГўГҐГ°
+                    console.log(`ГЏГ°Г®Г±Г¬Г®ГІГ° ГЇГ°Г®ГҐГЄГІГ  #${index + 1}`);
                     
-                    // Показываем модальное окно с деталями проекта
+                    // ГЏГ®ГЄГ Г§Г»ГўГ ГҐГ¬ Г¬Г®Г¤Г Г«ГјГ­Г®ГҐ Г®ГЄГ­Г® Г± Г¤ГҐГІГ Г«ГїГ¬ГЁ ГЇГ°Г®ГҐГЄГІГ 
                     showProjectDetails(item);
                 });
             }
         });
     };
     
-    // Функция для отображения деталей проекта
+    // Г”ГіГ­ГЄГ¶ГЁГї Г¤Г«Гї Г®ГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГї Г¤ГҐГІГ Г«ГҐГ© ГЇГ°Г®ГҐГЄГІГ 
     function showProjectDetails(item) {
-        // Получаем информацию о проекте
+        // ГЏГ®Г«ГіГ·Г ГҐГ¬ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГѕ Г® ГЇГ°Г®ГҐГЄГІГҐ
         const title = item.querySelector('h3').textContent;
         const description = item.querySelector('p').textContent;
         const image = item.querySelector('img').src;
         
-        // Создаем модальное окно
+        // Г‘Г®Г§Г¤Г ГҐГ¬ Г¬Г®Г¤Г Г«ГјГ­Г®ГҐ Г®ГЄГ­Г®
         const modal = document.createElement('div');
         modal.className = 'project-modal';
         
-        // Наполняем модальное окно содержимым
+        // ГЌГ ГЇГ®Г«Г­ГїГҐГ¬ Г¬Г®Г¤Г Г«ГјГ­Г®ГҐ Г®ГЄГ­Г® Г±Г®Г¤ГҐГ°Г¦ГЁГ¬Г»Г¬
         modal.innerHTML = `
             <div class="modal-content">
                 <span class="close-modal">&times;</span>
@@ -315,57 +315,138 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>${description}</p>
                 <div class="project-details">
                     <div class="detail-item">
-                        <h4>Клиент</h4>
-                        <p>Название компании</p>
+                        <h4>ГЉГ«ГЁГҐГ­ГІ</h4>
+                        <p>ГЌГ Г§ГўГ Г­ГЁГҐ ГЄГ®Г¬ГЇГ Г­ГЁГЁ</p>
                     </div>
                     <div class="detail-item">
-                        <h4>Дата</h4>
-                        <p>Март 2025</p>
+                        <h4>Г„Г ГІГ </h4>
+                        <p>ГЊГ Г°ГІ 2025</p>
                     </div>
                     <div class="detail-item">
-                        <h4>Категория</h4>
+                        <h4>ГЉГ ГІГҐГЈГ®Г°ГЁГї</h4>
                         <p>${item.getAttribute('data-category')}</p>
                     </div>
                 </div>
-                <a href="#" class="btn">Посмотреть проект</a>
+                <a href="#" class="btn">ГЏГ®Г±Г¬Г®ГІГ°ГҐГІГј ГЇГ°Г®ГҐГЄГІ</a>
             </div>
         `;
         
-        // Добавляем модальное окно на страницу
+        // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г¬Г®Г¤Г Г«ГјГ­Г®ГҐ Г®ГЄГ­Г® Г­Г  Г±ГІГ°Г Г­ГЁГ¶Гі
         document.body.appendChild(modal);
         
-        // Предотвращаем прокрутку страницы
+        // ГЏГ°ГҐГ¤Г®ГІГўГ°Г Г№Г ГҐГ¬ ГЇГ°Г®ГЄГ°ГіГІГЄГі Г±ГІГ°Г Г­ГЁГ¶Г»
         document.body.style.overflow = 'hidden';
         
-        // Показываем модальное окно с анимацией
+        // ГЏГ®ГЄГ Г§Г»ГўГ ГҐГ¬ Г¬Г®Г¤Г Г«ГјГ­Г®ГҐ Г®ГЄГ­Г® Г± Г Г­ГЁГ¬Г Г¶ГЁГҐГ©
         setTimeout(() => {
             modal.classList.add('show');
         }, 10);
         
-        // Обработчик для закрытия модального окна
+        // ГЋГЎГ°Г ГЎГ®ГІГ·ГЁГЄ Г¤Г«Гї Г§Г ГЄГ°Г»ГІГЁГї Г¬Г®Г¤Г Г«ГјГ­Г®ГЈГ® Г®ГЄГ­Г 
         const closeModal = modal.querySelector('.close-modal');
         closeModal.addEventListener('click', () => {
             modal.classList.remove('show');
             
-            // Разрешаем прокрутку страницы после закрытия
+            // ГђГ Г§Г°ГҐГёГ ГҐГ¬ ГЇГ°Г®ГЄГ°ГіГІГЄГі Г±ГІГ°Г Г­ГЁГ¶Г» ГЇГ®Г±Г«ГҐ Г§Г ГЄГ°Г»ГІГЁГї
             setTimeout(() => {
                 document.body.removeChild(modal);
                 document.body.style.overflow = '';
             }, 300);
         });
         
-        // Закрытие при клике вне содержимого
+        // Г‡Г ГЄГ°Г»ГІГЁГҐ ГЇГ°ГЁ ГЄГ«ГЁГЄГҐ ГўГ­ГҐ Г±Г®Г¤ГҐГ°Г¦ГЁГ¬Г®ГЈГ®
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 closeModal.click();
             }
         });
     }
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // РџСЂСЏРјРѕР№ СЃРїРѕСЃРѕР± СЃРґРµР»Р°С‚СЊ РєР°Р¶РґС‹Р№ СЌР»РµРјРµРЅС‚ РїРѕСЂС‚С„РѕР»РёРѕ РєР»РёРєР°Р±РµР»СЊРЅС‹Рј
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        portfolioItems.forEach(item => {
+            // РќР°С…РѕРґРёРј URL РІРЅСѓС‚СЂРё СЌС‚РѕРіРѕ СЌР»РµРјРµРЅС‚Р° (РІ РєРЅРѕРїРєРµ РёР»Рё РґСЂСѓРіРѕРј РјРµСЃС‚Рµ)
+            let url = '';
+            
+            // РЎРЅР°С‡Р°Р»Р° РїСЂРѕРІРµСЂСЏРµРј, РµСЃС‚СЊ Р»Рё РєРЅРѕРїРєР° СЃ Р°РґСЂРµСЃРѕРј
+            const button = item.querySelector('button[onclick]');
+            if (button && button.getAttribute('onclick')) {
+                const onclickAttr = button.getAttribute('onclick');
+                // РР·РІР»РµРєР°РµРј URL РёР· СЃС‚СЂРѕРєРё onclick="window.location.href='URL';"
+                const match = onclickAttr.match(/window\.location\.href='([^']+)'/);
+                if (match && match[1]) {
+                    url = match[1];
+                }
+            }
+            
+            // Р•СЃР»Рё URL РЅРµ РЅР°Р№РґРµРЅ РІ РєРЅРѕРїРєРµ, РёС‰РµРј РїРµСЂРІСѓСЋ СЃСЃС‹Р»РєСѓ
+            if (!url) {
+                const link = item.querySelector('.portfolio-link');
+                if (link && link.getAttribute('href') && link.getAttribute('href') !== '#') {
+                    url = link.getAttribute('href');
+                }
+            }
+            
+            // Р•СЃР»Рё URL РЅР°Р№РґРµРЅ, РґРµР»Р°РµРј РІРµСЃСЊ СЌР»РµРјРµРЅС‚ РєР»РёРєР°Р±РµР»СЊРЅС‹Рј
+            if (url && url !== '#') {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', function(e) {
+                    // Р•СЃР»Рё РєР»РёРє РЅРµ РЅР° СЃСЃС‹Р»РєРµ РёР»Рё РєРЅРѕРїРєРµ, РїРµСЂРµРЅР°РїСЂР°РІР»СЏРµРј
+                    if (!e.target.closest('a') && !e.target.closest('button')) {
+                        window.open(url, '_blank');
+                    }
+                });
+                
+                // Р”РѕР±Р°РІР»СЏРµРј С…РѕСЂРѕС€Рѕ Р·Р°РјРµС‚РЅСѓСЋ РєРЅРѕРїРєСѓ РїРµСЂРµС…РѕРґР°
+                const overlay = item.querySelector('.portfolio-overlay');
+                if (overlay) {
+                    // РЈРґР°Р»СЏРµРј СЃСѓС‰РµСЃС‚РІСѓСЋС‰СѓСЋ РєРЅРѕРїРєСѓ, РµСЃР»Рё РµСЃС‚СЊ
+                    const existingBtn = overlay.querySelector('button[onclick]');
+                    if (existingBtn) {
+                        existingBtn.remove();
+                    }
+                    
+                    // РЎРѕР·РґР°РµРј РЅРѕРІСѓСЋ РєРЅРѕРїРєСѓ
+                    const visitButton = document.createElement('a');
+                    visitButton.href = url;
+                    visitButton.target = '_blank';
+                    visitButton.textContent = 'РџРµСЂРµР№С‚Рё РЅР° СЃР°Р№С‚';
+                    visitButton.classList.add('portfolio-visit-btn');
+                    visitButton.style.display = 'inline-block';
+                    visitButton.style.backgroundColor = '#3498db';
+                    visitButton.style.color = 'white';
+                    visitButton.style.padding = '10px 20px';
+                    visitButton.style.borderRadius = '4px';
+                    visitButton.style.margin = '15px 0';
+                    visitButton.style.textDecoration = 'none';
+                    visitButton.style.fontWeight = 'bold';
+                    visitButton.style.transition = 'all 0.3s ease';
+                    
+                    visitButton.onmouseover = function() {
+                        this.style.backgroundColor = '#2980b9';
+                        this.style.transform = 'translateY(-3px)';
+                        this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                    };
+                    
+                    visitButton.onmouseout = function() {
+                        this.style.backgroundColor = '#3498db';
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = 'none';
+                    };
+                    
+                    overlay.appendChild(visitButton);
+                }
+            }
+        });
+    });
+</script>
     
-    // Запускаем отслеживание просмотров портфолио
+    // Г‡Г ГЇГіГ±ГЄГ ГҐГ¬ Г®ГІГ±Г«ГҐГ¦ГЁГўГ Г­ГЁГҐ ГЇГ°Г®Г±Г¬Г®ГІГ°Г®Гў ГЇГ®Г°ГІГґГ®Г«ГЁГ®
     trackPortfolioViews();
     
-    // Добавляем стили для модального окна проектов
+    // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г±ГІГЁГ«ГЁ Г¤Г«Гї Г¬Г®Г¤Г Г«ГјГ­Г®ГЈГ® Г®ГЄГ­Г  ГЇГ°Г®ГҐГЄГІГ®Гў
     const modalStyle = document.createElement('style');
     modalStyle.textContent = `
         .project-modal {
